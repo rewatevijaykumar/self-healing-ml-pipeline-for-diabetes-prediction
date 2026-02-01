@@ -1,30 +1,33 @@
-# self-healing-ml-pipeline-for-diabetes-prediction
-Self-Healing ML Pipeline for Diabetes Prediction
+# Self-Healing ML Pipeline for Diabetes Prediction
 
-Project Overview
+## Project Overview
 
-This project implements a self-healing ML pipeline for predicting diabetes progression using the sklearn diabetes dataset. The pipeline handles:
+This project implements a **self-healing machine learning pipeline** for predicting diabetes progression using the **scikit-learn diabetes dataset**.
 
-Feature preprocessing (numeric scaling, categorical encoding)
+The pipeline is designed to automatically detect issues in incoming data and recover without manual intervention.
 
-Anomaly detection and data cleaning
+### What the pipeline handles
 
-Data drift monitoring
+- Feature preprocessing (numeric scaling, categorical encoding)
+- Anomaly detection and data cleaning
+- Data drift monitoring
+- Automatic retraining with versioned model storage
+- Logging and metrics tracking
 
-Automatic retraining with versioned model storage
+---
 
-Logging and metrics tracking
+## Key Features
 
-Key Features
+- ✅ Production-ready pipeline structure  
+- ✅ Versioned models and metadata  
+- ✅ Logging & alerting for anomalies and data drift  
+- ✅ Easy extension to other datasets  
 
-Production-ready pipeline
+---
 
-Versioned models & metadata
+## Pipeline Architecture
 
-Logging & alerting for anomalies and drift
-
-Easy extension to other datasets
-
+```mermaid
 flowchart TD
     A[Data Ingestion] --> B[Preprocessing]
     B --> C[Feature Scaling & Encoding]
@@ -35,7 +38,7 @@ flowchart TD
     G --> F
     F --> H[Logging & Model Versioning]
     H --> I[Deployed Model / Monitoring]
-    
+
     style A fill:#f9f,stroke:#333,stroke-width:2px
     style B fill:#bbf,stroke:#333,stroke-width:2px
     style C fill:#bbf,stroke:#333,stroke-width:2px
@@ -46,40 +49,43 @@ flowchart TD
     style H fill:#fcf,stroke:#333,stroke-width:2px
     style I fill:#afa,stroke:#333,stroke-width:2px
 
-Usage Example
-
+### Usage Example
 from src.predictor import SelfHealingPredictor
 import pandas as pd
 
-# Load new data
+#### Load new data
 X_new = pd.read_csv("data/diabetes.csv")
 
-# Initialize predictor
-predictor = SelfHealingPredictor(model_path="models/pipeline_20260101_120000.pkl",
-                                 numeric_stats={...})
+#### Initialize predictor
+predictor = SelfHealingPredictor(
+    model_path="models/pipeline_20260101_120000.pkl",
+    numeric_stats={...}  # statistics saved during training
+)
 
-# Predict and self-heal if needed
+#### Predict and self-heal if needed
 predictions = predictor.predict(X_new, target_col="target")
+
 print(predictions[:5])
 
 self_healing_ml_pipeline/
 │
 ├─ data/
-│   └─ diabetes.csv          # optional: dataset copy
+│   └─ diabetes.csv          # Optional: dataset copy
 │
 ├─ notebooks/
 │   └─ exploratory_analysis.ipynb
 │
 ├─ src/
-│   ├─ pipeline.py           # main pipeline code
-│   ├─ predictor.py          # self-healing predictor class
-│   └─ utils.py              # helper functions (logging, metrics)
+│   ├─ pipeline.py           # Main pipeline code
+│   ├─ predictor.py          # Self-healing predictor class
+│   └─ utils.py              # Helper functions (logging, metrics)
 │
 ├─ models/
-│   └─ (versioned models go here)
+│   └─ (versioned models stored here)
 │
 ├─ logs/
 │   └─ pipeline.log
 │
 ├─ README.md
 └─ requirements.txt
+
