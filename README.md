@@ -23,8 +23,6 @@ The pipeline is designed to automatically detect issues in incoming data and rec
 - ✅ Logging & alerting for anomalies and data drift  
 - ✅ Easy extension to other datasets  
 
----
-
 ## Pipeline Architecture
 
 ```mermaid
