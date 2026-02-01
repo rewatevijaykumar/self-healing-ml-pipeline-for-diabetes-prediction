@@ -47,6 +47,25 @@ flowchart TD
     style H fill:#fcf,stroke:#333,stroke-width:2px
     style I fill:#afa,stroke:#333,stroke-width:2px
 
+
+```markdown
+## Pipeline Architecture
+
+```mermaid
+flowchart TD
+    A[Data Ingestion] --> B[Preprocessing]
+    B --> C[Feature Scaling & Encoding]
+    C --> D[Anomaly Detection]
+    D --> E{Anomaly or Drift Detected?}
+    E -- No --> F[Prediction]
+    E -- Yes --> G[Retraining Pipeline]
+    G --> F
+    F --> H[Logging & Model Versioning]
+    H --> I[Deployed Model / Monitoring]
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#bbf,stroke:#333,stroke-width:2px
+
 ### Usage Example
 from src.predictor import SelfHealingPredictor
 import pandas as pd
