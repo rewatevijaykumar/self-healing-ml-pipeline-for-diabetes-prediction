@@ -24,13 +24,6 @@ The pipeline is designed to automatically detect issues in incoming data and rec
 - ✅ Easy extension to other datasets
   
 ## Pipeline Architecture
-```mermaid
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
-```
 
 ```mermaid
 flowchart TD
@@ -43,6 +36,8 @@ flowchart TD
     G --> F
     F --> H[Logging & Model Versioning]
     H --> I[Deployed Model / Monitoring]
+```
+
 ```
 ### Usage Example
 from src.predictor import SelfHealingPredictor
@@ -83,4 +78,4 @@ self_healing_ml_pipeline/
 │
 ├─ README.md
 └─ requirements.txt
-
+```
