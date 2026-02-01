@@ -37,15 +37,16 @@ flowchart TD
     F --> H[Logging & Model Versioning]
     H --> I[Deployed Model / Monitoring]
 
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style B fill:#bbf,stroke:#333,stroke-width:2px
-    style C fill:#bbf,stroke:#333,stroke-width:2px
-    style D fill:#f96,stroke:#333,stroke-width:2px
-    style E fill:#faa,stroke:#333,stroke-width:2px
-    style G fill:#6f6,stroke:#333,stroke-width:2px
-    style F fill:#cff,stroke:#333,stroke-width:2px
-    style H fill:#fcf,stroke:#333,stroke-width:2px
-    style I fill:#afa,stroke:#333,stroke-width:2px
+    style A fill:#E1BEE7,color:#000,stroke:#4A148C,stroke-width:2px
+    style B fill:#BBDEFB,color:#000,stroke:#0D47A1,stroke-width:2px
+    style C fill:#BBDEFB,color:#000,stroke:#0D47A1,stroke-width:2px
+    style D fill:#FFCCBC,color:#000,stroke:#BF360C,stroke-width:2px
+    style E fill:#FFCDD2,color:#000,stroke:#B71C1C,stroke-width:2px
+    style F fill:#B2EBF2,color:#000,stroke:#006064,stroke-width:2px
+    style G fill:#C8E6C9,color:#000,stroke:#1B5E20,stroke-width:2px
+    style H fill:#F8BBD0,color:#000,stroke:#880E4F,stroke-width:2px
+    style I fill:#DCEDC8,color:#000,stroke:#33691E,stroke-width:2px
+
 ```
 
 ```
