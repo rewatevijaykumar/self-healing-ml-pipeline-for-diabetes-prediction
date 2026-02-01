@@ -36,6 +36,16 @@ flowchart TD
     G --> F
     F --> H[Logging & Model Versioning]
     H --> I[Deployed Model / Monitoring]
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#bbf,stroke:#333,stroke-width:2px
+    style C fill:#bbf,stroke:#333,stroke-width:2px
+    style D fill:#f96,stroke:#333,stroke-width:2px
+    style E fill:#faa,stroke:#333,stroke-width:2px
+    style G fill:#6f6,stroke:#333,stroke-width:2px
+    style F fill:#cff,stroke:#333,stroke-width:2px
+    style H fill:#fcf,stroke:#333,stroke-width:2px
+    style I fill:#afa,stroke:#333,stroke-width:2px
 ```
 
 ```
