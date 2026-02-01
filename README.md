@@ -21,8 +21,8 @@ The pipeline is designed to automatically detect issues in incoming data and rec
 - ✅ Production-ready pipeline structure  
 - ✅ Versioned models and metadata  
 - ✅ Logging & alerting for anomalies and data drift  
-- ✅ Easy extension to other datasets  
-
+- ✅ Easy extension to other datasets
+  
 ## Pipeline Architecture
 
 ```mermaid
@@ -36,35 +36,6 @@ flowchart TD
     G --> F
     F --> H[Logging & Model Versioning]
     H --> I[Deployed Model / Monitoring]
-
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style B fill:#bbf,stroke:#333,stroke-width:2px
-    style C fill:#bbf,stroke:#333,stroke-width:2px
-    style D fill:#f96,stroke:#333,stroke-width:2px
-    style E fill:#faa,stroke:#333,stroke-width:2px
-    style G fill:#6f6,stroke:#333,stroke-width:2px
-    style F fill:#cff,stroke:#333,stroke-width:2px
-    style H fill:#fcf,stroke:#333,stroke-width:2px
-    style I fill:#afa,stroke:#333,stroke-width:2px
-
-
-```markdown
-## Pipeline Architecture
-
-```mermaid
-flowchart TD
-    A[Data Ingestion] --> B[Preprocessing]
-    B --> C[Feature Scaling & Encoding]
-    C --> D[Anomaly Detection]
-    D --> E{Anomaly or Drift Detected?}
-    E -- No --> F[Prediction]
-    E -- Yes --> G[Retraining Pipeline]
-    G --> F
-    F --> H[Logging & Model Versioning]
-    H --> I[Deployed Model / Monitoring]
-
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style B fill:#bbf,stroke:#333,stroke-width:2px
 
 ### Usage Example
 from src.predictor import SelfHealingPredictor
